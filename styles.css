@@ -1,27 +1,52 @@
-.chalange1, .chalange2, .chalange3, .chalange4, .chalange5 {
-    border: 1px solid black;
-    width: 75%;
-    margin: 0 auto;
-    text-align: center;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.flexbox1, .flexbox2, .flexbox3, .buttons-flex, .bj-row1, .bj-row2, .bj-row3 {
-    border: 1px solid black;
+.bj {
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 15px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+}
+
+.head {
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 15px;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.bj-row1, .bj-row2, .bj-row3 {
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
+    position: relative;
 }
 
-.bj-row1, .bj-row2{
+#rules {
+    width: 75%;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 50px;
+    position: absolute;
+    margin-top: 25px;
+    visibility: hidden;
+}
+
+.bj-table{
+    border: 15px solid #312318;
+    border-radius: 30px;
     background: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbackgroundcheckall.com%2Fwp-content%2Fuploads%2F2017%2F12%2Fpoker-table-background-13.jpg&f=1&nofb=1") center;
     color: white;
 }
 
 .bj-row1 div{
-    border: 1px solid black;
-    height: 400px;
+    height: 350px;
     padding: 10px;
     flex: 1;
 }
@@ -32,7 +57,6 @@
 }
 
 .bj-row2 div{
-    border: 1px solid black;
     padding: 10px;
 }
 
@@ -42,27 +66,33 @@
 }
 
 .bj-row3 table, .bj-row3 th, .bj-row3 td{
-    border: 1px solid black;
+    border: 3px solid black;
     padding: 5px;
 }
 
-.flexbox1 div {
-    display: flex;
-    padding: 10px;
-    border: 1px solid black;
-    align-items: center;
-}
+#bg {
+    position: fixed; 
+    top: -50%; 
+    left: -50%; 
+    width: 200%; 
+    height: 200%;
+    z-index: -1;
+  }
+  #bg img {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: auto; 
+    min-width: 50%;
+    min-height: 50%;
+  }
 
-.flexbox2 img {
-    margin: 10px;
-    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.7);
-}
-
-#result {
-    border: 1px solid black;
-    padding: 10px;
-}
-
-.flexbox3 img:hover{
-    box-shadow: 0px 10px 50px rgba(37, 50,223, 1);
+#cc{
+    background-color:rgba(0, 0, 0, 0.75);
+    text-align: center;
+    padding: 5px;
+    color: white;
+    margin-bottom: 0px;
 }

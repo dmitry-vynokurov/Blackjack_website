@@ -1,137 +1,15 @@
-// Chalange 1
-
-function ageIndays() {
-    var yearOfbirth = prompt("What is your birth year?");
-    var ageIndays = (2020 - yearOfbirth) * 365;
-    var h1 = document.createElement("h1");
-    var answer = document.createTextNode("You are " +  ageIndays + " days old");
-    h1.setAttribute("id", ageIndays);
-    h1.appendChild(answer);
-    document.getElementById("result").appendChild(h1);
-
-}
-
-function reset() {
-    document.getElementById("result").innerHTML = "";
-}
-
-// Chalange2: Cat Generator
-function genegateCat() {
-    var image = document.createElement("img");
-    var div = document.getElementById("cat-gen");
-    image.src = "http://thecatapi.com/api/images/get?format=src&type=gif&size=small";
-    div.appendChild(image);
-}
-
-// Chalange 3: Rock, Paper, Scissors
-function rpsgame(choise) {
-    var humanChoise = choise.id;
-    var computer = ["rock", "paper", "scissors"][Math.floor(Math.random() * 3)];
-    winner = selectWinner(humanChoise, computer);
-    display(humanChoise, computer, winner);
-}
-
-function selectWinner(humanChoise, computer){
-    if (humanChoise === computer){
-        winner = "Draw";
-    }
-    else if ((computer == "paper" && humanChoise == "rock") || (computer == "rock" && humanChoise == "scissors") || (computer == "scissors" && humanChoise == "paper")){
-        winner = "You lost";
-    }
-    else{
-        winner = "You Won !";
-    }
-    return winner;
-}
-
-function display(humanChoise, computer, winner){
-    humanimg = document.getElementById(humanChoise).src;
-    computerimg = document.getElementById(computer).src;
-
-    document.getElementById("rock").remove();
-    document.getElementById("paper").remove();
-    document.getElementById("scissors").remove();
-
-    var humandiv = document.createElement("div");
-    var messagediv = document.createElement("div");
-    var computerdiv = document.createElement("div");
-
-    if (winner == "You lost"){
-        winner_color = "red";
-    }
-    else if (winner == "You Won !"){
-        winner_color = "green";
-    }
-    else {
-        winner_color = "yellow";
-    }
-
-    humandiv.innerHTML = "<img src='" + humanimg + "' height='150px' style='box-shadow: 0px 10px 50px rgba(37, 50,223, 1);'>";
-    messagediv.innerHTML = "<h1 style='color: " + winner_color + "; font-size: 60px; padding: 30px;'>" + winner + "<h1/>";
-    computerdiv.innerHTML = "<img src='" + computerimg + "' height='150px' style='box-shadow: 0px 10px 50px rgba(223, 50,23, 1);'>";
-
-    document.getElementById("rps-game").appendChild(humandiv);
-    document.getElementById("rps-game").appendChild(messagediv);
-    document.getElementById("rps-game").appendChild(computerdiv);
-}
-
-// Chalane 4: Change color of all buttons
-
-var allbuttons = document.getElementsByTagName("button");
-
-var originalbuttons = [];
-for (let i = 0; i < allbuttons.length; i += 1){
-    originalbuttons.push(allbuttons[i].classList[1]);
-}
-
-function buttons_color(action){
-    if (action.value == "red"){
-        for (let i = 0; i < allbuttons.length; i += 1){
-            allbuttons[i].classList.remove(allbuttons[i].classList[1]);
-            allbuttons[i].classList.add("btn-danger");
-        }
-    }
-    else if (action.value == "blue"){
-        for (let i = 0; i < allbuttons.length; i += 1){
-            allbuttons[i].classList.remove(allbuttons[i].classList[1]);
-            allbuttons[i].classList.add("btn-primary");
-        }
-    }
-    else if (action.value == "green"){
-        for (let i = 0; i < allbuttons.length; i += 1){
-            allbuttons[i].classList.remove(allbuttons[i].classList[1]);
-            allbuttons[i].classList.add("btn-success");
-        }
-    }
-    else if (action.value == "yellow"){
-        for (let i = 0; i < allbuttons.length; i += 1){
-            allbuttons[i].classList.remove(allbuttons[i].classList[1]);
-            allbuttons[i].classList.add("btn-warning");
-        }
-    }
-    else if (action.value === "random") {
-        var choises = ["btn-danger", "btn-primary", "btn-success", "btn-warning"];
-        for (let i = 0; i < allbuttons.length; i += 1){
-            var randint = Math.floor(Math.random() * 4);
-            allbuttons[i].classList.remove(allbuttons[i].classList[1]);
-            allbuttons[i].classList.add(choises[randint])
-        }
-    }
-    else if (action.value === "reset"){
-        for (let i = 0; i < allbuttons.length; i += 1){
-            allbuttons[i].classList.remove(allbuttons[i].classList[1]);
-            allbuttons[i].classList.add(originalbuttons[i]);
-        }
-    }
-}
-
-
 // Chalange 5:Blackjack
 let BlackjackGame = {
     'you':{'scorecap':'#your', 'div':'#yourbox', 'score':0},
     'dealer':{'scorecap':'#dealer', 'div':'#dealerbox', 'score':0},
-    'cards':['2', '3', '4', '5', '6', '7', '8', '9', '10', 'K', 'J', 'Q', 'A'],
-    'cardMap':{'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, '10':10, 'K':10, 'J':10, 'Q':10, 'A':[1, 11]},
+    'cards':['2.1', '3.1', '4.1', '5.1', '6.1', '7.1', '8.1', '9.1', '10.1', 'K.1', 'J.1', 'Q.1', 'A.1', 
+    '2.2', '3.2', '4.2', '5.2', '6.2', '7.2', '8.2', '9.2', '10.2', 'K.2', 'J.2', 'Q.2', 'A.2', 
+    '2.3', '3.3', '4.3', '5.3', '6.3', '7.3', '8.3', '9.3', '10.3', 'K.3', 'J.3', 'Q.3', 'A.3', 
+    '2.4', '3.4', '4.4', '5.4', '6.4', '7.4', '8.4', '9.4', '10.4', 'K.4', 'J.4', 'Q.4', 'A.4'],
+    'cardMap':{'2.1':2, '3.1':3, '4.1':4, '5.1':5, '6.1':6, '7.1':7, '8.1':8, '9.1':9, '10.1':10, 'K.1':10, 'J.1':10, 'Q.1':10, 'A.1':[1, 11], 
+    '2.2':2, '3.2':3, '4.2':4, '5.2':5, '6.2':6, '7.2':7, '8.2':8, '9.2':9, '10.2':10, 'K.2':10, 'J.2':10, 'Q.2':10, 'A.2':[1, 11], 
+    '2.3':2, '3.3':3, '4.3':4, '5.3':5, '6.3':6, '7.3':7, '8.3':8, '9.3':9, '10.3':10, 'K.3':10, 'J.3':10, 'Q.3':10, 'A.3':[1, 11], 
+    '2.4':2, '3.4':3, '4.4':4, '5.4':5, '6.4':6, '7.4':7, '8.4':8, '9.4':9, '10.4':10, 'K.4':10, 'J.4':10, 'Q.4':10, 'A.4':[1, 11]},
     'wins':0,
     'losses':0,
     'draws':0,
@@ -148,6 +26,8 @@ const hitaudio = new Audio('sounds/swish.m4a')
 const winaudio = new Audio('sounds/cash.mp3')
 const loseaudio = new Audio('sounds/aww.mp3')
 
+document.getElementById("year").innerHTML = new Date().getFullYear()
+
 document.querySelector("#hit-btn").addEventListener("click", bjhit)
 document.querySelector("#stand-btn").addEventListener("click", bjstand)
 document.querySelector("#deal-btn").addEventListener("click", bjdeal)
@@ -162,17 +42,19 @@ function bjhit(){
             score(card, YOU)
             displayScore(YOU)
         }
+        document.querySelector("#rules").style.visibility = "hidden"
+        rules_display = false
     }
 }
 
 function randomCard(){
-    let randomcard = Math.floor(Math.random() * 13)
+    let randomcard = Math.floor(Math.random() * 52)
     return BlackjackGame["cards"][randomcard]
 }
 
 function showcard(card, player){
     let cardImage = document.createElement('img')
-    cardImage.src = `images/${card}.png`
+    cardImage.src = `images/${card}.jpg`
     document.querySelector(player['div']).appendChild(cardImage)
 }
 
@@ -196,16 +78,44 @@ function bjdeal(){
         document.querySelector(DEALER["scorecap"]).textContent = 0
         document.querySelector(DEALER["scorecap"]).style.color = "#fff"
         document.querySelector("#bj-status").textContent = "Let's play"
-        document.querySelector("#bj-status").style.color = 'black'
+        document.querySelector("#bj-status").style.color = 'white'
 
         BlackjackGame['hitStatus'] = false
         BlackjackGame['standStatus'] = false
         BlackjackGame['dealStatus'] = false
+
+        document.querySelector("#rules").style.visibility = "hidden"
+        rules_display = false
+    }
+}
+
+document.querySelector("#reset-score-btn").addEventListener("click", score_reset)
+document.querySelector("#rules-btn").addEventListener("click", rules)
+
+function score_reset(){
+    BlackjackGame["draws"] = 0
+    document.querySelector('#draws').textContent = BlackjackGame['draws']
+    BlackjackGame["wins"] = 0
+    document.querySelector('#wins').textContent = BlackjackGame['wins']
+    BlackjackGame["losses"] = 0
+    document.querySelector('#losses').textContent = BlackjackGame['losses']
+}
+
+let rules_display = false
+
+function rules(){
+    if (rules_display === false){
+        document.querySelector("#rules").style.visibility = "visible"
+        rules_display = true
+    }
+    else{
+        document.querySelector("#rules").style.visibility = "hidden"
+        rules_display = false
     }
 }
 
 function score(card, player){
-    if (card === "A"){
+    if (card === "A.1" || card === "A.2" || card === "A.3" || card === "A.4"){
         if (player["score"] <= 10){
             player["score"] += 11
         }
@@ -233,6 +143,8 @@ function sleep(ms){
 }
 
 async function bjstand(){
+    document.querySelector("#rules").style.visibility = "hidden"
+    rules_display = false
     if (BlackjackGame['standStatus'] === true){
         if (DEALER['score'] <= 21){
             while (DEALER['score'] <= 16){
@@ -246,7 +158,7 @@ async function bjstand(){
             }
             showWinner(bjlogic())
             BlackjackGame['dealStatus'] = true
-        } 
+        }
     }
 }
 
@@ -289,3 +201,5 @@ function showWinner(winner){
         loseaudio.play()
     }
 }
+
+

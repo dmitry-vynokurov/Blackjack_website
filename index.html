@@ -2,78 +2,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Js chalange</title>
+    <title>Free Blackjack</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://lh5.ggpht.com/mLnsRlW7QjurzeTQFm-YfdrELnUXh_3XvRJF342kVnftRoTxsiNDRbn5PuyM0tpG2A=w300">
 </head>
 <body>
-    <div class="chalange1">
-        <h2 >Chalange 1! Your age in days.</h2>
-        <div class="flexbox1">
-            <div>
-                <button class="btn btn-primary" onclick="ageIndays()">Click me</button>
-            </div>
-            <div>
-                <button class="btn btn-danger" onclick="reset()">reset</button>
-            </div>
+    <div id="bg">
+        <img src="https://cdn.miscellaneoushi.com/1920x1080/20121018/cards%20poker%20poker%20chips%20gambling%201920x1080%20wallpaper_www.miscellaneoushi.com_5.jpg" alt="">
+      </div>
+    <div class="bj">
+        <div class="head">
+            <h2>Blackjack</h2>
+            <h3><span id="bj-status">Let's play</span></h3>
         </div>
-        <div class="chalange1">
-            <div id="result">
+        <div class="bj-table">
+            <div class="bj-row1">
+                <div id="rules">
+                    <p>Object of the games is to score a number bigger than your oponent but not higher than 21. </p>
+                    <p>The blackjack card values are:</p>
+                    <ul>
+                        <li>Ace = 1 or 11</li>
+                        <li>2-9 = Face Value</li>
+                        <li>10, J, Q, K = 10</li>
+                    </ul>
+                    <p>When both players have equal score, it is a draw. If one player has a score higher than 21 he loses.</p>
+                    <p>Press "Hit" to draw a card. Draw cards until decired score or over 21. Press "Stand" to let your opponent play. Press "Deal to record a score and clear the table.</p>
+                    <p>To hide rules start a game by pressing "Hit" or press "Rules". You can always revisit rules by pressing "Rules"</p>
+                </div>
+                <div id="yourbox">
+                    <h2>You: <span id="your">0</span></h2>
+                </div>
+                <div id="dealerbox">
+                    <h2>Dealer: <span id="dealer">0</span></h2>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="chalange2">
-        <h2>Chalange 2: Cat Generator</h2>
-        <button class="btn btn-success" onclick="genegateCat()">Generate Cat</button>
-        <div class="flexbox2" id="cat-gen"></div>
-
-    </div>
-    <div class="chalange3">
-        <h2>Chalange 3: Rock, Papaer, Scissors</h2>
-        <div class="flexbox3" id="rps-game">
-            <img src="https://openclipart.org/image/400px/svg_to_png/209758/harvestable-resources-rock.png" alt="" id="rock" height="150px" onclick="rpsgame(this)">
-            <img src="https://openclipart.org/image/400px/svg_to_png/179319/Lined-Paper.png" alt="" id="paper" height="150px" onclick="rpsgame(this)"">
-            <img src="https://openclipart.org/image/400px/svg_to_png/22372/nicubunu-Scissors.png" alt="" id="scissors" height="150px" onclick="rpsgame(this)"">
-        </div>
-    </div>
-    <div class="chalange4">
-        <h2>Chalange 4: CHange color of all buttons</h2>
-        <div class="buttons-flex">
-            <form action="">
-                <select name="backdrop" id="background" onchange="buttons_color(this)">
-                    <option value="random">Random</option>
-                    <option value="red">Red</option>
-                    <option value="blue">Blue</option>
-                    <option value="green">Green</option>
-                    <option value="yellow">Yellow</option>
-                    <option value="reset">Reset</option>
-                </select>
-            </form>
-            <button class="btn btn-primary">Wee!</button>
-            <button class="btn btn-danger">DuckDuckGo</button>
-            <button class="btn btn-warning">GsmArena</button>
-            <button class="btn btn-success">Youtube</button>
-        </div>
-    </div>
-    <div class="chalange5">
-        <h2>Chalange 5: Blackjack</h2>
-        <h2><span id="bj-status">Let's play</span></h2>
-        <div class="bj-row1">
-            <div id="yourbox">
-                <h2>You: <span id="your">0</span></h2>
-            </div>
-            <div id="dealerbox">
-                <h2>Dealer: <span id="dealer">0</span></h2>
-            </div>
-        </div>
-        <div class="bj-row2">
-            <div>
-                <button class="btn-lg btn-primary mr-2" id="hit-btn">Hit</button>
-                <button class="btn-lg btn-warning mr-2" id="stand-btn">Stand</button>
-                <button class="btn-lg btn-danger mr-2" id="deal-btn">Deal</button>
+            <div class="bj-row2">
+                <div>
+                    <button class="btn-lg btn-primary mr-2" id="hit-btn">Hit</button>
+                    <button class="btn-lg btn-warning mr-2" id="stand-btn">Stand</button>
+                    <button class="btn-lg btn-danger mr-2" id="deal-btn">Deal</button>
+                </div>
             </div>
         </div>
         <div class="bj-row3">
+            <button class="btn-lg btn-dark" id="rules-btn">Rules</button>
             <table>
                 <tr>
                     <th>Wins</th>
@@ -86,11 +59,10 @@
                     <td id="draws">0</td>
                 </tr>
             </table>
+            <button class="btn-lg btn-dark" id="reset-score-btn">Reset score</button>
         </div>
     </div>
-
-
-
+    <p id="cc" > Website made by Dmitry Vynokurov. &copy; Copyright <span id="year">2018</span> All Rights Reserved</p>
     <script src="script.js"></script>
 </body>
 </html>
