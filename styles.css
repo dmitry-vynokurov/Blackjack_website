@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+body{
+    position: relative;
+    min-height:100vh
+}
+
 .bj {
     width: 75%;
     margin: 0 auto;
@@ -15,9 +20,9 @@
 .head {
     background-color: rgba(0, 0, 0, 0.75);
     border-radius: 15px;
-    padding-top: 2px;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
+    padding-top: 2%;
+    padding-bottom: %;
+    margin-bottom: 2%;
 }
 
 .bj-row1, .bj-row2, .bj-row3 {
@@ -27,6 +32,10 @@
     flex-direction: row;
     justify-content: space-around;
     position: relative;
+}
+
+.bj-row3 {
+    padding: 5%;
 }
 
 #rules {
@@ -68,6 +77,7 @@
 .bj-row3 table, .bj-row3 th, .bj-row3 td{
     border: 3px solid black;
     padding: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 #bg {
@@ -88,6 +98,13 @@
     min-width: 50%;
     min-height: 50%;
   }
+
+.footer{
+    position: absolute; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 
 #cc{
     background-color:rgba(0, 0, 0, 0.75);
