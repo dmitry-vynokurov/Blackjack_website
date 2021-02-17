@@ -35,7 +35,8 @@ body{
 }
 
 .bj-row3 {
-    padding: 5%;
+    padding-bottom: 6vh;
+    padding-top: 3vh;
 }
 
 #rules {
