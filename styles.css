@@ -21,7 +21,7 @@ body{
     background-color: rgba(0, 0, 0, 0.75);
     border-radius: 15px;
     padding-top: 2%;
-    padding-bottom: %;
+    padding-bottom: 2%;
     margin-bottom: 2%;
 }
 
@@ -51,7 +51,7 @@ body{
 .bj-table{
     border: 15px solid #312318;
     border-radius: 30px;
-    background: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbackgroundcheckall.com%2Fwp-content%2Fuploads%2F2017%2F12%2Fpoker-table-background-13.jpg&f=1&nofb=1") center;
+    background: url("table_background.jpg") center;
     color: white;
 }
 
